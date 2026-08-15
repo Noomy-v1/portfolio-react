@@ -1,6 +1,10 @@
+import { useLang } from "../context/LangContext";
+import { useTheme } from "../context/ThemeContext";
 
 export function Header(){
-    const nom = "Noemie"
+    
+  const { theme, toggleTheme } = useTheme();
+  const { lang, toggleLang, t } = useLang();
 
     return (
              <nav>
@@ -11,14 +15,14 @@ export function Header(){
                     <span className="bar"></span>
                 </button>
                 <div className="nav-links">
-                    <a href="#about" data-i18n="nav.about">À propos</a>
-                    <a href="#projects" data-i18n="nav.projects">Projets</a>
-                    <a href="#skills" data-i18n="nav.skills">Compétences</a>
-                    <a href="blog.html" data-i18n="nav.blog">Blog</a>
-                    <a href="#contact" data-i18n="nav.contact">Contact</a>
+                    <a href="#about" data-i18n="nav.about">{t("nav.about")}</a>
+                    <a href="#projects" data-i18n="nav.projects">{t("nav.projects")}</a>
+                    <a href="#skills" data-i18n="nav.skills">{t("nav.skills")}</a>
+                    <a href="blog.html" data-i18n="nav.blog">{t("nav.blog")}</a>
+                    <a href="#contact" data-i18n="nav.contact">{t("nav.contact")}</a>
                 </div>
                 <label className="theme-switch" aria-label="Changer le thème">
-                    <input type="checkbox" id="theme-toggle" />
+                    <input type="checkbox" checked={theme === 'light'} onChange={toggleTheme} />
                     <span className="theme-switch-track">
                     <span className="theme-switch-thumb">
                         <span className="icon-moon">🌚</span>
@@ -26,9 +30,10 @@ export function Header(){
                     </span>
                     </span>
                 </label>
-                <button id="lang-toggle" className="lang-toggle">
-                    <span className="lang-label">EN</span>
+                <button className="lang-toggle" onClick={toggleLang}>
+                    <span className="lang-label">{lang === 'fr' ? 'EN' : 'FR'}</span>
                 </button>
             </nav>
     )
 }
+

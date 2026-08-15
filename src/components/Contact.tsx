@@ -1,11 +1,14 @@
+import { useLang } from "../context/LangContext";
+
 export function Contact(){
+    const { t } = useLang();
     return(
         <section id="contact">
-      <div className="section-label" data-i18n="contact.label">Contact</div>
+      <div className="section-label">{t("contact.label")}</div>
       <div className="contact-box">
         <div className="contact-text">
-          <h3 data-i18n="contact.title">Travaillons ensemble</h3>
-          <p data-i18n="contact.desc">Un projet en tête ? Envoyez-moi un message.</p>
+          <h3 dangerouslySetInnerHTML={{ __html: t("contact.title") }} />
+          <p data-i18n="contact.desc">{t("contact.desc")}</p>
         </div>
         <div className="contact-links">
           <button className="btn-primary email-copy" data-email="n.gil.dev@gmail.com">
