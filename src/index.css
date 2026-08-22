@@ -197,7 +197,7 @@ nav {
   margin-bottom: 1.5rem;
 }
 
-.hero h1 {
+.hero-title {
   font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 500;
   line-height: 1.15;
@@ -207,7 +207,7 @@ nav {
   max-width: 600px;
 }
 
-.hero h1 em {
+.hero-title em {
   font-style: normal;
   color: var(--text-secondary);
 }
@@ -218,6 +218,10 @@ nav {
   line-height: 1.7;
   max-width: 480px;
   margin-bottom: 2rem;
+}
+
+.split-word {
+  display: inline-block;
 }
 
 .hero-cta {
@@ -443,6 +447,10 @@ section {
   gap: 1rem;
 }
 
+.back-link {
+  margin-bottom: 2rem;
+}
+
 .back-link a {
   font-size: 13px;
   color: var(--text-secondary);
@@ -652,5 +660,67 @@ section {
   .lang-toggle {
     order: 2;
     margin-left: 0.5rem;
+  }
+}
+
+/* GLOW CARD */
+.glow-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(200px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+      hsl(var(--glow-hue, 220) 80% 60% / 0.15),
+      transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.glow-card:hover::before {
+  opacity: 1;
+}
+
+.glow-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(150px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+      hsl(var(--glow-hue, 220) 80% 60% / 0.5),
+      transparent 70%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.glow-card:hover::after {
+  opacity: 1;
+}
+
+/* Comportement mobile/tactile */
+@media (hover: none) and (pointer: coarse) {
+  .glow-card::before {
+    background: radial-gradient(circle at 50% 50%,
+        hsl(var(--glow-hue, 220) 80% 60% / 0.1),
+        transparent 70%);
+    opacity: 0;
+  }
+
+  .glow-card:active::before {
+    opacity: 1;
+  }
+
+  .glow-card::after {
+    display: none;
   }
 }

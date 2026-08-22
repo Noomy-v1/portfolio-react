@@ -7,7 +7,12 @@ export const translations = {
         'nav.contact': 'Contact',
 
         'hero.tag': 'Étudiante en recherche de stage',
-        'hero.title': 'Développeuse <em>Web</em><br>& Mobile',
+        'hero.titleParts': [
+            { text: 'Développeuse' },
+            { text: 'Web', em: true },
+            { text: '&', break: true },
+            { text: 'Mobile' },
+        ],
         'hero.desc': "Étudiante en informatique passionnée par la création d'applications et de jeux. Mon objectif : coder des projets interactifs, du mobile jusqu'à l'intelligence artificielle.",
         'hero.ctaProjects': 'Voir mes projets',
         'hero.ctaContact': 'Me contacter',
@@ -45,7 +50,11 @@ export const translations = {
         'nav.contact': 'Contact',
 
         'hero.tag': 'Student seeking an internship',
-        'hero.title': '<em>Web</em> & Mobile<br>Developer',
+        'hero.titleParts': [
+            { text: 'Web', em: true },
+            { text: '&', break: true },
+            { text: 'Mobile' },
+        ],
         'hero.desc': "Computer science student passionate about building apps and games. My goal: coding interactive projects, from mobile to artificial intelligence.",
         'hero.ctaProjects': 'View my projects',
         'hero.ctaContact': 'Contact me',

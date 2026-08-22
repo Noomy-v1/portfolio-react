@@ -1,11 +1,12 @@
 import { useLang } from "../context/LangContext";
+import { GlowCard } from "./GlowCard";
 
 export function Contact(){
     const { t } = useLang();
     return(
         <section id="contact">
       <div className="section-label">{t("contact.label")}</div>
-      <div className="contact-box">
+      <GlowCard className="contact-box">
         <div className="contact-text">
           <h3 dangerouslySetInnerHTML={{ __html: t("contact.title") }} />
           <p data-i18n="contact.desc">{t("contact.desc")}</p>
@@ -17,7 +18,7 @@ export function Contact(){
           <a href="https://www.linkedin.com/in/no%C3%A9mie-gil-a5a856327/" target="_blank" className="btn-secondary">LinkedIn</a>
           <a href="https://github.com/Noomy-v1" target="_blank" className="btn-secondary">GitHub</a>
         </div>
-      </div>
+      </GlowCard>
     </section>
     )
 }

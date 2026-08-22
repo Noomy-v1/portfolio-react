@@ -4,6 +4,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { projects } from '../data/projects-data';
 import { useLang } from '../context/LangContext';
+import { GlowCard } from './GlowCard';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,14 +27,23 @@ export function Projects() {
       <div className="section-label">{t('projects.label')}</div>
       <div className="projects-grid" ref={gridRef}>
         {projects.map((project) => (
-          <a key={project.link} href={project.link} className="project-card" target="_blank" rel="noopener noreferrer">
-            <div className="project-icon">{project.icon}</div>
-            <div className="project-title">{project.title[lang as 'fr' | 'en']}</div>
-            <div className="project-desc">{project.description[lang as 'fr' | 'en']}</div>
-            <div className="project-tags">
-              {project.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
-            </div>
-          </a>
+            <GlowCard
+            as="a"
+            key={project.link}
+            href={project.link}
+            className="project-card"
+            glowColor="blue"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+                <div className="project-icon">{project.icon}</div>
+                <div className="project-title">{project.title[lang as 'fr' | 'en']}</div>
+                <div className="project-desc">{project.description[lang as 'fr' | 'en']}</div>
+                <div className="project-tags">
+                {project.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
+                </div>
+          
+            </GlowCard>
         ))}
       </div>
     </section>

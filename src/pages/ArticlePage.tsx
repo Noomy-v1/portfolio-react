@@ -41,11 +41,13 @@ export function ArticlePage() {
 
   return (
     <>
-      <div className="back-link">
-        <Link to="/blog">{t('article.back')}</Link>
-      </div>
+      
 
       <article className="article-content">
+        <div className="back-link">
+            <Link to="/blog">{t('article.back')}</Link>
+        </div>
+
         {status === 'loading' && <p className="feedback-text">{t('blog.loading')}</p>}
         {status === 'notfound' && <p className="feedback-text">Article introuvable.</p>}
         {status === 'error' && <p className="feedback-text">{t('blog.loadError')}</p>}

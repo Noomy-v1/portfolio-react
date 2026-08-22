@@ -4,12 +4,14 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { skills } from '../data/skills-data';
 import { useLang } from '../context/LangContext';
+import { GlowCard } from './GlowCard';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function Skills() {
   const { lang, t } = useLang();
   const gridRef = useRef(null);
+  const currentLang = lang as 'fr' | 'en';
 
   useGSAP(() => {
     gsap.from('.skill-group', {
@@ -26,12 +28,12 @@ export function Skills() {
       <div className="section-label">{t('skills.label')}</div>
       <div className="skills-grid" ref={gridRef}>
         {skills.map((skill) => (
-            <div key={skill.title[lang as 'fr' | 'en']} className="skill-group">
-                <div className="skill-group-title">{skill.title[lang as 'fr' | 'en']}</div>
-            <div className="skill-tags">
-              {skill.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
-            </div>
-          </div>
+          <GlowCard key={skill.title[currentLang]} className="skill-group" glowColor="purple">
+              <div className="skill-group-title">{skill.title[currentLang]}</div>
+              <div className="skill-tags">
+                {skill.tags.map((tag) => <span key={tag} className="tag">{tag}</span>)}
+              </div>
+          </GlowCard>
         ))}
       </div>
     </section>
