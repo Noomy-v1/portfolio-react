@@ -1,24 +1,23 @@
-import { About } from "./components/About"
-import { Contact } from "./components/Contact"
-import { Header } from "./components/Header"
-import { Hero } from "./components/Hero"
-import { Projects } from "./components/Projects"
-import { Skills } from "./components/Skills"
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Header } from './components/Header';
+import { HomePage } from './pages/HomePage';
+import { BlogPage } from './pages/BlogPage';
+import { ArticlePage } from './pages/ArticlePage';
+import './App.css';
 
 function App() {
-  
-
   return (
-    <div className="portfolio">
-      <Header />
-      <Hero />
-      <About />
-      <Projects />
-      <Skills />
-      <Contact />
-    </div>
-  )
+    <BrowserRouter>
+      <div className="portfolio">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<ArticlePage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
