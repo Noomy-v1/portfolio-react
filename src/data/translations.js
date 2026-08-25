@@ -5,6 +5,7 @@ export const translations = {
         'nav.skills': 'Compétences',
         'nav.blog': 'Blog',
         'nav.contact': 'Contact',
+        'nav.education': 'Éducation',
 
         'hero.tag': 'Étudiante en recherche de stage',
         'hero.titleParts': [
@@ -25,6 +26,7 @@ export const translations = {
 
         'projects.label': 'Projets',
         'skills.label': 'Compétences',
+        'education.label': 'Éducation',
 
         'contact.label': 'Contact',
         'contact.title': 'Travaillons ensemble',
@@ -48,6 +50,7 @@ export const translations = {
         'nav.skills': 'Skills',
         'nav.blog': 'Blog',
         'nav.contact': 'Contact',
+        'nav.education': 'Education',
 
         'hero.tag': 'Student seeking an internship',
         'hero.titleParts': [
@@ -66,6 +69,7 @@ export const translations = {
         'about.stat3': '6th',
         'projects.label': 'Projects',
         'skills.label': 'Skills',
+        'education.label': 'Education',
 
         'contact.label': 'Contact',
         'contact.title': "Let's work together",

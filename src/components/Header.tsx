@@ -33,8 +33,9 @@ export function Header() {
         <a href="#about" onClick={(e) => handleAnchorClick(e, '#about')}>{t("nav.about")}</a>
         <a href="#projects" onClick={(e) => handleAnchorClick(e, '#projects')}>{t("nav.projects")}</a>
         <a href="#skills" onClick={(e) => handleAnchorClick(e, '#skills')}>{t("nav.skills")}</a>
-        <Link to="/blog">{t('nav.blog')}</Link>
+        <a href="#education" onClick={(e) => handleAnchorClick(e, '#education')}>{t("nav.education")}</a>
         <a href="#contact" onClick={(e) => handleAnchorClick(e, '#contact')}>{t("nav.contact")}</a>
+        <Link to="/blog">{t('nav.blog')}</Link>
       </div>
       <label className="theme-switch" aria-label="Changer le thème">
         <input type="checkbox" checked={theme === 'light'} onChange={toggleTheme} />
