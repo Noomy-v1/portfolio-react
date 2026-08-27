@@ -441,6 +441,13 @@ section {
 }
 
 /* EDUCATION */
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .carousel-track {
   display: flex;
   gap: 1rem;
@@ -462,7 +469,7 @@ section {
 
 .carousel-item {
   flex: 0 0 260px;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
 }
 
 .carousel-dots {
