@@ -8,10 +8,11 @@ export function Education() {
   const trackRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const scroll = (direction: 'left' | 'right') => {
-    if (!trackRef.current) return;
-    const amount = 280;
-    trackRef.current.scrollBy({ left: direction === 'left' ? -amount : amount, behavior: 'smooth' });
+  const scrollToIndex = (index: number) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const item = track.children[index] as HTMLElement;
+    item?.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
   };
 
   useEffect(() => {
@@ -19,14 +20,12 @@ export function Education() {
     if (!track) return;
 
     const handleScroll = () => {
-      const trackCenter = track.scrollLeft + track.clientWidth / 2;
       let closestIndex = 0;
       let closestDistance = Infinity;
 
       Array.from(track.children).forEach((child, index) => {
         const el = child as HTMLElement;
-        const itemCenter = el.offsetLeft + el.clientWidth / 2;
-        const distance = Math.abs(itemCenter - trackCenter);
+        const distance = Math.abs(el.offsetLeft - track.scrollLeft);
         if (distance < closestDistance) {
           closestDistance = distance;
           closestIndex = index;
@@ -43,19 +42,18 @@ export function Education() {
   return (
     <section id="education">
       <div className="section-label">{t("education.label")}</div>
-        <div className="carousel">
-            <div className="carousel-track carousel-centered" ref={trackRef}>
-                {education.map((item) => (
-                <GlowCard key={item.school} className="project-card carousel-item" glowColor="orange">
-                    <div className="project-title">{item.school}</div>
-                    <div className="project-desc">{item.degree[lang as 'fr' | 'en']}</div>
-                    <div className="project-desc">{item.focus[lang as 'fr' | 'en']}</div>
-                    <div className="project-tags">
-                    <span className="tag">{item.period[lang as 'fr' | 'en']}</span>
-                    </div>
-                </GlowCard>
-                ))}
+
+      <div className="carousel-track" ref={trackRef}>
+        {education.map((item) => (
+          <GlowCard key={item.school} className="project-card carousel-item" glowColor="orange">
+            <div className="project-title">{item.school}</div>
+            <div className="project-desc">{item.degree[lang as 'fr' | 'en']}</div>
+            <div className="project-desc">{item.focus[lang as 'fr' | 'en']}</div>
+            <div className="project-tags">
+              <span className="tag">{item.period[lang as 'fr' | 'en']}</span>
             </div>
+          </GlowCard>
+        ))}
       </div>
 
       {education.length > 1 && (
@@ -64,7 +62,7 @@ export function Education() {
             <button
               key={index}
               className={`carousel-dot ${index === activeIndex ? 'active' : ''}`}
-              onClick={() => scroll('right')}
+              onClick={() => scrollToIndex(index)}
               aria-label={`Aller à l'élément ${index + 1}`}
             />
           ))}

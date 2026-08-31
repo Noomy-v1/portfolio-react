@@ -27,6 +27,7 @@ export const translations = {
         'projects.label': 'Projets',
         'skills.label': 'Compétences',
         'education.label': 'Éducation',
+        'nav.cv': 'CV',
 
         'contact.label': 'Contact',
         'contact.title': 'Travaillons ensemble',
@@ -70,6 +71,7 @@ export const translations = {
         'projects.label': 'Projects',
         'skills.label': 'Skills',
         'education.label': 'Education',
+        'nav.cv': 'Resume',
 
         'contact.label': 'Contact',
         'contact.title': "Let's work together",

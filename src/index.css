@@ -441,13 +441,6 @@ section {
 }
 
 /* EDUCATION */
-.carousel {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
 .carousel-track {
   display: flex;
   gap: 1rem;
@@ -459,12 +452,6 @@ section {
 
 .carousel-track::-webkit-scrollbar {
   display: none;
-}
-
-.carousel-centered {
-  justify-content: center;
-  padding-left: calc(50% - 130px);
-  padding-right: calc(50% - 130px);
 }
 
 .carousel-item {
