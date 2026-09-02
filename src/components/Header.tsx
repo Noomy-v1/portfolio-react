@@ -23,7 +23,7 @@ export function Header() {
 
   return (
     <nav>
-      <div className="logo">Noémie Gil<span> / dev</span></div>
+      <div className="logo"><a href="/">Noémie Gil<span> / dev</span></a></div>
       <button className="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
         <span className="bar"></span>
         <span className="bar"></span>
