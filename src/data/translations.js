@@ -55,6 +55,7 @@ export const translations = {
 
         'hero.tag': 'Student seeking an internship',
         'hero.titleParts': [
+            { text: 'Developer' },
             { text: 'Web', em: true },
             { text: '&', break: true },
             { text: 'Mobile' },
