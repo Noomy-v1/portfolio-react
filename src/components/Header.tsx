@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useLang } from "../context/LangContext";
 import { useTheme } from "../context/ThemeContext";
@@ -7,9 +8,11 @@ export function Header() {
   const { lang, toggleLang, t } = useLang();
   const navigate = useNavigate();
   const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleAnchorClick = (e: React.MouseEvent, hash: string) => {
     e.preventDefault();
+    setMenuOpen(false);
 
     if (location.pathname === '/') {
       document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' });
@@ -24,19 +27,24 @@ export function Header() {
   return (
     <nav>
       <div className="logo"><a href="/">Noémie Gil<span> / dev</span></a></div>
-      <button className="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <button
+        className="menu-toggle"
+        aria-label="Ouvrir le menu"
+        aria-expanded={menuOpen}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
         <span className="bar"></span>
         <span className="bar"></span>
         <span className="bar"></span>
       </button>
-      <div className="nav-links">
+      <div className={menuOpen ? 'nav-links open' : 'nav-links'}>
         <a href="#about" onClick={(e) => handleAnchorClick(e, '#about')}>{t("nav.about")}</a>
         <a href="#projects" onClick={(e) => handleAnchorClick(e, '#projects')}>{t("nav.projects")}</a>
         <a href="#skills" onClick={(e) => handleAnchorClick(e, '#skills')}>{t("nav.skills")}</a>
         <a href="#education" onClick={(e) => handleAnchorClick(e, '#education')}>{t("nav.education")}</a>
         <a href="#contact" onClick={(e) => handleAnchorClick(e, '#contact')}>{t("nav.contact")}</a>
-        <a href="/CV_Noemie_Gil_TI.pdf" download>{t('nav.cv')}</a>
-        <Link to="/blog">{t('nav.blog')}</Link>
+        <a href="/CV_Noemie_Gil_TI.pdf" download onClick={() => setMenuOpen(false)}>{t('nav.cv')}</a>
+        <Link to="/blog" onClick={() => setMenuOpen(false)}>{t('nav.blog')}</Link>
       </div>
       <label className="theme-switch" aria-label="Changer le thème">
         <input type="checkbox" checked={theme === 'light'} onChange={toggleTheme} />
