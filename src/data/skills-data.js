@@ -5,7 +5,7 @@ export const skills = [
     },
     {
         title: { fr: "Backend", en: "Backend" },
-        tags: ["Java", "Spring Boot", "Python", "C++"],
+        tags: ["Java", "Spring Boot", "Python", "C++", "C#", "Node.js"],
     },
     {
         title: { fr: "Base de données", en: "Database" },

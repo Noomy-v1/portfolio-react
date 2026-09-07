@@ -43,7 +43,7 @@ export function Header() {
         <a href="#skills" onClick={(e) => handleAnchorClick(e, '#skills')}>{t("nav.skills")}</a>
         <a href="#education" onClick={(e) => handleAnchorClick(e, '#education')}>{t("nav.education")}</a>
         <a href="#contact" onClick={(e) => handleAnchorClick(e, '#contact')}>{t("nav.contact")}</a>
-        <a href="/CV_Noemie_Gil_TI.pdf" download onClick={() => setMenuOpen(false)}>{t('nav.cv')}</a>
+        <a href="/CV_Noemie_Gil_Stage_Hiver_2027.pdf" download onClick={() => setMenuOpen(false)}>{t('nav.cv')}</a>
         <Link to="/blog" onClick={() => setMenuOpen(false)}>{t('nav.blog')}</Link>
       </div>
       <label className="theme-switch" aria-label="Changer le thème">
