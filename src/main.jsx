@@ -18,5 +18,6 @@ createRoot(document.getElementById('root')).render(
         <App />
       </LangProvider>
     </ThemeProvider>
-  </StrictMode>,
+    </StrictMode>
+  
 )

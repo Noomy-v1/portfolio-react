@@ -28,6 +28,9 @@ export const translations = {
         'education.label': 'Éducation',
         'nav.cv': 'CV',
 
+        'experience.label': 'Expérience',
+        'nav.experience': 'Expérience',
+
         'contact.label': 'Contact',
         'contact.title': 'Travaillons ensemble',
         'contact.desc': 'Un projet en tête ? Envoyez-moi un message.',
@@ -54,7 +57,7 @@ export const translations = {
 
         'hero.tag': 'Looking for a final-year internship — Winter 2027',
         'hero.titleParts': [
-            { text: 'Developer' },
+            { text: 'Software Developer' },
             { text: 'Web', em: true },
             { text: '&', break: true },
             { text: 'Mobile' },
@@ -71,6 +74,9 @@ export const translations = {
         'skills.label': 'Skills',
         'education.label': 'Education',
         'nav.cv': 'Resume',
+
+        'experience.label': 'Experience',
+        'nav.experience': 'Experience',
 
         'contact.label': 'Contact',
         'contact.title': "Let's work together",
