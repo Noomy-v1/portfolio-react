@@ -3,11 +3,11 @@ export const projects = [
         icon: "◈",
         title: { fr: "CRM - Manara", en: "CRM - Manara" },
         description: {
-            fr: "CRM complet avec Spring Boot et MySQL pour automatiser la gestion des inscriptions et du suivi pédagogique du Centre Manara. Migré vers React lors du dernier sprint. Ce projet intègre une architecture robuste et une interface entièrement responsive.",
-            en: "Full CRM built with Spring Boot and MySQL to automate registration management and academic tracking for the Manara Center. Migrated to React in the final sprint. This project features a robust architecture and a fully responsive interface.",
+            fr: "CRM complet avec Spring Boot et MySQL pour automatiser la gestion des inscriptions et du suivi pédagogique du Centre Manara. Migré vers Angular lors du dernier sprint. Ce projet intègre une architecture robuste et une interface entièrement responsive.",
+            en: "Full CRM built with Spring Boot and MySQL to automate registration management and academic tracking for the Manara Center. Migrated to Angular in the final sprint. This project features a robust architecture and a fully responsive interface.",
         },
-        tags: ["Spring Boot", "React", "SQL"],
-        link: "https://github.com/Noomy-v1/Manara-CRM",
+        tags: ["Spring Boot", "Angular", "SQL"],
+        link: "https://github.com/Noomy-v1/crm-manara-wu-kabir-gil-hajji",
     },
     {
         icon: "◉",

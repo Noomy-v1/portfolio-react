@@ -18,7 +18,7 @@ const NAV_ITEMS: NavItem[] = [
   { key: "nav.experience", type: "anchor", target: "#experience" },
   { key: "nav.contact", type: "anchor", target: "#contact" },
   { key: "nav.blog", type: "route", target: "/blog" },
-  { key: "nav.cv", type: "download", target: "/CV_Noemie_Gil_TI.pdf" },
+  { key: "nav.cv", type: "download", target: "/CV_Noemie_Gil_Stage_Hiver_2027.pdf" },
 ];
 
 export function Header() {
