@@ -29,14 +29,4 @@ export const projects = [
         tags: ["Unity", "C#", "TextMesh Pro"],
         link: "https://noo-my.itch.io/la-survivante",
     },
-    {
-        icon: "◈",
-        title: { fr: "MaisonGilPOS - En développement", en: "MaisonGilPOS - In progress" },
-        description: {
-            fr: "Application iPad conçue sur mesure pour digitaliser la prise de commandes de la boulangerie familiale. Architecture MV (SwiftUI + SwiftData), avec un catalogue de produits à délais de commande variables, et une génération automatique de tickets de production par département. Projet en cours de développement.",
-            en: "Custom iPad app designed to digitize order-taking for the family bakery. MV architecture (SwiftUI + SwiftData), featuring a product catalog with variable order lead times and automatic generation of production tickets by department. Project currently in progress.",
-        },
-        tags: ["Swift", "SwiftUI", "SwiftData"],
-        link: "https://github.com/Noomy-v1/MaisonGilPOS",
-    },
 ];
