@@ -29,4 +29,14 @@ export const projects = [
         tags: ["Unity", "C#", "TextMesh Pro"],
         link: "https://noo-my.itch.io/la-survivante",
     },
+    {
+        icon: "◈",
+        title: { fr: "Vide Grenier API", en: "Vide Grenier API" },
+        description: {
+            fr: "API REST d'une plateforme d'achat-vente de vêtements de seconde main à Montréal, développée en équipe de six pour une application mobile Android. J'ai conçu les collections Favoris et Portefeuilles (règles de solde, retraits, notifications de baisse de prix) et rédigé le plan de refactorisation en trois couches. Projet en cours (Sprint 3 : refactorisation et passage à MariaDB) : FastAPI, Docker, 158 tests de bout en bout en Gherkin et intégration continue. Dépôt privé pour le moment, code disponible sur demande.",
+            en: "REST API for a second-hand clothing marketplace in Montréal, built by a team of six to power an Android mobile app. I built the Favorites and Wallets collections (balance rules, withdrawals, price-drop notifications) and wrote the three-layer refactoring plan. Work in progress (Sprint 3: refactoring and migration to MariaDB): FastAPI, Docker, 158 end-to-end Gherkin tests and continuous integration. Repository currently private, code available on request.",
+        },
+        tags: ["Python", "FastAPI", "MariaDB", "Docker"],
+        // link: "https://github.com/Noomy-v1/vide-grenier-api", // à remettre quand le dépôt sera public
+    },
 ];

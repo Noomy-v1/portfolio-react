@@ -10,7 +10,7 @@ export function About(){
         <p className="about-text">{t("about.text")}</p>
         <div className="about-stats">
           <GlowCard className="stat-item">
-            <div className="stat-num">3</div>
+            <div className="stat-num">4</div>
             <div className="stat-desc">{t("about.stat1")}</div>
           </GlowCard>
           <GlowCard className="stat-item">
